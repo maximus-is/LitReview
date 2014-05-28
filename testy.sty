@@ -1,0 +1,56 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{pgfplots,tikz}
+\usepackage{pgfplotstable}
+%\usepackage[style=authoryear,natbib=true,backend=bibtex]{biblatex}
+\usepackage[authoryear]{natbib}
+\usepackage[none]{hyphenat}
+
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{mytheorem}{Theorem}
+\newtheorem{mylemma}{Lemma}
+\numberwithin{equation}{section}
+\numberwithin{mydef}{section}
+\numberwithin{mytheorem}{section}
+\numberwithin{mylemma}{section}
+
+\newcommand{\fn}[2]{#1\!\left( #2 \right)}
+
+\newcommand{\expect}[1]{\mathbb{E}\left[ #1 \right]}
+\newcommand{\cexpect}[2]{\mathbb{E}\left[ #1 \middle\vert #2 \right]}
+\newcommand{\variance}[1]{\fn{Var}{#1}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\normdist}[2]{\mathcal{N} \left( #1,\, #2 \right)}
+\newcommand{\sumin}[1]{\sum_{i=1}^n #1}
+\newcommand{\betaols}{\hat{\beta}_{OLS}}
+\newcommand{\plim}{\mathop{p\mkern2mu\mathrm{\mathchar"702D lim}}}
+\newcommand{\ninf}{n \rightarrow \infty}
+\newcommand{\betaminbeta}{\left( \hat{\beta} - \beta \right)}
+\newcommand{\onen}{\frac{1}{n}}
+\newcommand{\pLLN}{\xrightarrow[LLN]{p}}
+\newcommand{\betadist}{\sqrt{n} \betaminbeta}
+\newcommand{\detm}[1]{\fn{\det}{#1}}
+\newcommand{\trace}[1]{\fn{\mathbf{tr}}{#1}}
+\newcommand{\diag}[1]{\fn{\mathbf{diag}}{#1}}
+\newcommand{\prob}[1]{\fn{\mathrm{prob}}{#1}}
+\newcommand{\invnorm}[1]{\fn{\Phi^{-1}}{#1}}
+\newcommand{\logf}[1]{\fn{\log}{#1}}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection (\alph{subsubsection})}
+
+\setlength{\parindent}{0pt}
