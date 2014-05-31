@@ -10,11 +10,11 @@
 \usepackage{verbatim}
 \usepackage{pgfplots,tikz}
 \usepackage{pgfplotstable}
-\usepackage[hyperref=true,citestyle=authoryear-ibid,url=true,style=authoryear,backend=biber]{biblatex}
-%\usepackage[authoryear]{natbib} 
+\usepackage[style=apa]{biblatex}
+%\usepackage[authoryear]{natbib}
 \usepackage[none]{hyphenat}
 
-%\bibliographystyle{apalike} 
+%\bibliographystyle{apalike}
 %\bibpunct{(}{)}{;}{a}{,}{,}
 
 \newtheorem{mydef}{Definition}

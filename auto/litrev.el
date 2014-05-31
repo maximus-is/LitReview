@@ -17,5 +17,5 @@
      "art12"
      "article"
      "12pt"
-     "custom")))
+     "testy")))
 

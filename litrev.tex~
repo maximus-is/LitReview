@@ -11,9 +11,6 @@ citecolor=black}
 
 \newcommand{\cgray}{\cellcolor[gray]{0.8}}
 
-\addbibresource{bi.bib}
-
-
 \author{Maxwell Sutton}
 \title{Generalised Variance  \\ {\large Research Proposal for Quantitative Business Analysis Honours}}
 
@@ -55,14 +52,14 @@ where $IQ$ is the integrated quarticity that is necessary in deriving the asympt
 
 The traditional method to estimate volatility is the close-close estimator, which is the sample variance of
 returns based on the closing prices. Using squared returns to estimate volatility was first seen in
-\textcite{taylor1986modelling} and then the traditional form was settled by \textcite{French1987} and
-\textcite{Schwert1989}.
+\citet{taylor1986modelling} and then the traditional form was settled by \citet{French1987} and
+\citet{Schwert1989}.
 \begin{align*}
   \hat{\sigma}_{cc}^2 = \sumin \left(C_i - C_{i-1} \right)^2
 \end{align*}
 
-\textcite{Garman1980} suggested that its disadvantage is that it does not take into account all information
-available, thus losing efficiency. The intraday equivalent was formalised by \textcite{Andersen2001} as the
+\citet{Garman1980} suggested that its disadvantage is that it does not take into account all information
+available, thus losing efficiency. The intraday equivalent was formalised by \citet{Andersen2001} as the
 summation of intraday squared returns
 \begin{align*}
   \hat{\sigma}_{rv,t}^2 = \sum_{j=1}^M \left(C_{j,t} - C_{j-1,t} \right)^2
@@ -72,7 +69,7 @@ It was suggested that by examining the returns over smaller and smaller interval
 accurately measure integrated volatility. The authors investigated the distribution of the estimator on only
 two exchange rates; the deutschemark-US dollar (USDDEM) and and the yen-US dollar (USDJPY). A more thorough
 examination of the properties of realized volatility was conducted on 30 stocks from the Dow Jones Industrial
-Average (DJIA) by \textcite{Andersen2001a}. \\
+Average (DJIA) by \citet{Andersen2001a}. \\
 
 Due to the lack of contemporaneous competing estimators, the authors in both cases can only examine the
 distribution of the realized volatility estimator. In addition, as volatility of empirical data is not known a
@@ -80,38 +77,38 @@ priori, the accuracy of the estimator was not considered in the empirical sectio
 simulation study of the properties of realized volatility, which would allow a comparison of a known true
 value with the estimated value. \\
 
-In the absence of noise and market microstructures, \textcite{Andersen2003} show that as the frequency of
+In the absence of noise and market microstructures, \citet{Andersen2003} show that as the frequency of
 observations collected increases and the time interval between observations decreases to 0, the realized
 volatility estimator converges to the integrated variance. The asymptotic distribution of realized volatility,
-under a stochastic Geometric Brownian Motion process was shown by \textcite{Bandi2008} to be Gaussian in the
-multivariate case. It was reported for the univariate case by \textcite{McAleer2008}
+under a stochastic Geometric Brownian Motion process was shown by \citet{Bandi2008} to be Gaussian in the
+multivariate case. It was reported for the univariate case by \citet{McAleer2008}
 \begin{align*}
   \sqrt{n} \left( \hat{\sigma}_{rv,t}^2 - IV \right) \xrightarrow[n \to \infty]{d}
   \normdist{0}{2 IQ}
 \end{align*}
 
 A good review of the effects of microstructure noise on the realized volatility estimator is given by
-\textcite{McAleer2008}. \textcite{Bandi2008} showed that when there was noise, the estimate provided by the realized
+\citet{McAleer2008}. \citet{Bandi2008} showed that when there was noise, the estimate provided by the realized
 volatility estimator would be infinite as the frequency of observations increased, resulting in vast
 overestimation of the true
 volatility. \\
 
 Attempts to alleviate the effects of market microstructures include: considering multiple time scales
-\parencite{Zhang2005}, using kernels \parencite{Zhou1996,Barndorff-Nielsen2008a} and scaling realized volatility
-\parencite{Martens2007}. \textcite{McAleer2008} provide a good review of the techniques used.
+\citep{Zhang2005}, using kernels \citep{Zhou1996,Barndorff-Nielsen2008a} and scaling realized volatility
+\citep{Martens2007}. \citet{McAleer2008} provide a good review of the techniques used.
 
 \subsection{Realized Range}
 \label{sec:realized-range}
-\textcite{Parkinson1980} introduced the first range-based estimator of volatility. The author proposes that there
+\citet{Parkinson1980} introduced the first range-based estimator of volatility. The author proposes that there
 is a clear relationship between the range and the spot-volatility process and finds that the estimator
 \begin{align*}
   \hat{\sigma}_{p}^2 = \frac{1}{4 \logf{2}} \sumin \left(H_i - L_i \right)^2
 \end{align*}
 
 is more efficient than an estimator based on squared returns. However this estimator assumes zero drift and
-Geometric Brownian Motion \parencite{Kunitomo1992}. \textcite{Garman1980} suggested improvements in efficiency could
+Geometric Brownian Motion \citep{Kunitomo1992}. \citet{Garman1980} suggested improvements in efficiency could
 be made when also taking into account the open and the close price for each day, resulting in a family of
-estimators. The practical estimator as stated by \textcite{Haug2007} was
+estimators. The practical estimator as stated by \citet{Haug2007} was
 \begin{align*}
   \hat{\sigma}_{gk}^2 = \frac{1}{2} \sumin \left( {H_i} - {L_i} \right)^2 - \left(2 \logf{2} -
     1 \right) \sumin \left( {C_i} - {C_{i-1}} \right)^2
@@ -119,25 +116,25 @@ estimators. The practical estimator as stated by \textcite{Haug2007} was
 
 as a linear combination of Parkinson's estimator and the traditional close-close estimator. This estimator was
 found to be even more efficient than Parkinson's, however it was still dependent on the drift. Finally,
-\textcite{Rogers1991} introduced an estimator that included the open price and was independent of the drift term
+\citet{Rogers1991} introduced an estimator that included the open price and was independent of the drift term
 \begin{align*}
   \hat{\sigma}_{rs}^2 = \sumin \left( H_i - C_i \right) \left( H_i - O_i \right)
     + \left( L_i - C_i \right) \left( L_i - O_i \right)
 \end{align*}
 
-\textcite{DennisYang2000} and \textcite{Kunitomo1992} have both introduced other estimators of volatility that use
+\citet{DennisYang2000} and \citet{Kunitomo1992} have both introduced other estimators of volatility that use
 the range. The Yang and Zhang estimator uses estimates over multiple periods while Kunitomo's estimator
 considers a Brownian Bridge to form an adjusted estimate of the range, removing the drift. These two
-estimators are not considered. The reader is directed to \textcite{Molnar2012} for further reading. \\
+estimators are not considered. The reader is directed to \citet{Molnar2012} for further reading. \\
 
 Range-based estimators share some common properties. Prices are not observed continuously; rather, they are
 observed at discrete time intervals. In addition, a transaction is a discrete event and therefore the change
 in price due to this transaction is also discrete. This means that the continuous price process is observed
 only at discrete times. The effect of this is that during an interval, the observed highest price may be lower
-than the highest true price. This effect can bias range-based estimators downwards \parencite{Jacob2008}. \\
+than the highest true price. This effect can bias range-based estimators downwards \citep{Jacob2008}. \\
 
-Realized range was introduced in two concurrent concurrent papers by \textcite{Martens2007} and
-\textcite{Christensen2007}. In both papers, Parkinson's estimator is employed, however, instead of daily high and
+Realized range was introduced in two concurrent concurrent papers by \citet{Martens2007} and
+\citet{Christensen2007}. In both papers, Parkinson's estimator is employed, however, instead of daily high and
 low data, the highest and lowest price observed within a subinterval are considered. \\
 \begin{align}
   \hat{\sigma}_{rrv,t}^2 = \frac{1}{4 \logf{2}} \sum_{j=1}^M \left(H_{j,t} - L_{j,t} \right)^2 \label{eq:1}
@@ -145,31 +142,31 @@ low data, the highest and lowest price observed within a subinterval are conside
 
 The realized range-based volatility can reduce the effect of drift on Parkinson's range estimator, as for
 smaller intervals, the drift will become negligible. Thus $\hat{\sigma}_{gk}^2$ and $\hat{\sigma}_{rs}^2$ are
-not explored. \textcite{Martens2007} report that they do improve results, however the main results are only shown
+not explored. \citet{Martens2007} report that they do improve results, however the main results are only shown
 for the form seen in Eq.(\ref{eq:1}). \\
 
-\textcite{Martens2007} consider various bias correction factors to improve both realized volatility and realized
+\citet{Martens2007} consider various bias correction factors to improve both realized volatility and realized
 range. To compare the performance of the estimators, the authors conduct a simulation; 100 price observations
-are simulated for each second during 24 hour trading over 5000 days \parencite{Martens2007} in an attempt to
+are simulated for each second during 24 hour trading over 5000 days \citep{Martens2007} in an attempt to
 produce as close to a continuous process as possible. The prices followed a Geometric Brownian Motion process
 with volatility chosen to be 0.21. This choice of volatility is not justified or explained with reference to
 average volatility found empirically or previous research assumptions. In addition, empirical data does not
-exhibit constant volatility; \textcite{Alizadeh2002} found that Geometric Brownian Motion is not sufficient to
+exhibit constant volatility; \citet{Alizadeh2002} found that Geometric Brownian Motion is not sufficient to
 explain the autocorrelation or variance of volatility as found in foreign exchange data. \\
 
 The effect of two market microstructures; bid-ask bounce and infrequent trading, on the accuracy of realized
 volatility and realized range are examined in the simulation. The authors find that in the absence of noise,
 the realized volatility estimator is superior, however for both market microstructures, the realized range
-estimator is more accurate at higher frequencies \parencite{Martens2007}. This accuracy is measured using root
+estimator is more accurate at higher frequencies \citep{Martens2007}. This accuracy is measured using root
 mean squared error. \\
 
 \citeauthor{Martens2007} examine the distributional properties of realized volatility and realized range on an
-empirical dataset of the S\&P 500 futures index, replicating \textcite{Andersen2001a}. The authors, however,
-expand on this methodology, incorporating ideas from \textcite{Beckers1983} and \textcite{Fleming2003}. Comparing
+empirical dataset of the S\&P 500 futures index, replicating \citet{Andersen2001a}. The authors, however,
+expand on this methodology, incorporating ideas from \citet{Beckers1983} and \citet{Fleming2003}. Comparing
 the explanatory power of each estimator, realized range is superior to realized variance
-\parencite{Martens2007}. The authors then consider individual stocks of the S\&P 100 and find similar results. \\
+\citep{Martens2007}. The authors then consider individual stocks of the S\&P 100 and find similar results. \\
 
-In contrast, \textcite{Christensen2007} examine the theoretical properties of the realized range estimator in
+In contrast, \citet{Christensen2007} examine the theoretical properties of the realized range estimator in
 more depth. They first show consistency of the estimator to integrated variance and derive the asymptotic
 distribution as
 \begin{align*}
@@ -179,17 +176,17 @@ distribution as
 where $\lambda \approx 0.4$. Thus the asymptotic variance of the realized range estimator is five times
 smaller than the realized volatility estimator. \citeauthor{Christensen2007} evaluate the realized range
 estimator through both simulation and empirical analysis. The authors use a stochastic volatility model which
-is an improvement over \textcite{Martens2007}, however their methods are inferior. \\
+is an improvement over \citet{Martens2007}, however their methods are inferior. \\
 
 The authors simulate 1,000,000 days, each with 100, 500 or 1000 increments per day
-\parencite{Christensen2007}. The result is a poorer approximation of the continuous price process. The authors
+\citep{Christensen2007}. The result is a poorer approximation of the continuous price process. The authors
 only examine the asymptotic distribution of realized range, instead of how accurately it measures the true
 value that was simulated. There is also no comparison to other available estimators. Finally, the authors do
 not examine the effects of market microstructures within the simulation. \\
 
-The empirical study undertaken by \textcite{Christensen2007} is lacking as it only considers one stock; General
+The empirical study undertaken by \citet{Christensen2007} is lacking as it only considers one stock; General
 Motors, and the authors only examine the distributions of realized volatility and range and their
-correlation. The methodology found in \textcite{Martens2007} is more substantial.
+correlation. The methodology found in \citet{Martens2007} is more substantial.
 
 \section{Hypothesis Development}
 
@@ -227,7 +224,7 @@ denominators of Eq.(\ref{eq:2}) may yield better results, however this is not in
 results at the time of writing. \\
 
 The second proposal is to consider a Newey-West type estimator, where the maximum number of periods in each
-interval is truncated. \textcite{Newey1987} introduced an estimator of the covariance matrix for regression
+interval is truncated. \citet{Newey1987} introduced an estimator of the covariance matrix for regression
 coefficients. Its main use is in time-series regression as it takes into account autocorrelation of
 residuals. This option is has not been examined at all at the time of writing, but is an interesting avenue of
 research. 
@@ -238,23 +235,23 @@ The properties of generalised variance will be examined through a simulation stu
 study. This section outlines the methods that will be used and the reasons for each choice of method.
 
 \subsection{Simulation Study}
-Following \textcite{Martens2007}, an attempt will be made to generate as close to a continuous price process as
+Following \citet{Martens2007}, an attempt will be made to generate as close to a continuous price process as
 possible. Therefore, 100 price observations will be simulated per second, in a 24 hour trading period. The
 starting price will be set at \$100; this is chosen arbitrarily, and the prices will be simulated for 1000
 days following this first observation. By convention, there are generally 250 to 252 trading days in a year;
 this report assumes 252, providing 4 years of simulation. \\
 
 The expected return will be set at 20\% per annum; as a comparison, the ASX 200 posted a yearly return of
-17.29\% in the year up to June 2013 (22.2\% when adjusted for dividends) \parencite{Yeow2013}. This could be
+17.29\% in the year up to June 2013 (22.2\% when adjusted for dividends) \citep{Yeow2013}. This could be
 expanded to consider different expected returns to identify if the drift has a significant effect on the
 estimators, however the drift over the small time scales considered would be negligible, as discussed in
 Section \ref{sec:realized-range}. \\
 
 In order to capture different periods of volatility, four different starting values for the volatility; 5\%,
 10\%, 20\% and 30\%. The realized volatility of the All Ordinaries over the past five years as found by 
-\textcite{Herber2014} seems to fall between these values. \\
+\citet{Herber2014} seems to fall between these values. \\
 
-To improve upon \textcite{Martens2007}, the cases of constant volatility and dynamic volatility will be
+To improve upon \citet{Martens2007}, the cases of constant volatility and dynamic volatility will be
 considered. Three different volatility processes will be simulated, using the properties above. The first will
 be Geometric Brownian Motion, with constant volatility. A GARCH(1,1) process will then be considered, which
 takes the form
@@ -273,8 +270,8 @@ The intial value, $\sigma^2_{t=1}$, is set equal to the geometric brownian motio
 addition, $\alpha_0$ is chosen so that $v = \sigma^2_{gbm}$. That is, the long run variance of the GARCH(1,1)
 model is equal to the variance of the Geometric Brownian Motion model. \\
 
-Finally, a popular stochastic volatility model introduced by \textcite{Heston1993} is used, where the variance is
-a Cox-Ingersoll-Ross (CIR) process given by \textcite{Wilmott2007} as
+Finally, a popular stochastic volatility model introduced by \citet{Heston1993} is used, where the variance is
+a Cox-Ingersoll-Ross (CIR) process given by \citet{Wilmott2007} as
 \begin{align*}
   d\sigma^2_t &= \kappa \left(\theta - \sigma^2_t \right) dt + \xi \sigma_t dW^v_t \\
   dW_t dW^v_t &= \rho dt
@@ -297,14 +294,14 @@ with the 1000 days used in the simulation study. \\
 
 The stocks that were in the ASX 20 as of 13/05/14 were chosen as the pool of stocks to examine. It is the 20
 stocks on the Australian Stock Exchange with the highest market capitilisations. This list includes the top
-10 most traded shares of 2013, as reported by \textcite{MostTradesASX10}. Three of the stocks did not have the
+10 most traded shares of 2013, as reported by \citet{MostTradesASX10}. Three of the stocks did not have the
 required data, and so were excluded from the analysis. The data was sourced from Sirca. \\
 
 The first step will be to examine the distributions of the estimators for different frequencies in the manner
-of \textcite{Christensen2007}. A normal distribution is desirable for use in stochastic volatility models
-\parencite{Christensen2007}. As such, the first four moments of the distributions will be examined; mean,
+of \citet{Christensen2007}. A normal distribution is desirable for use in stochastic volatility models
+\citep{Christensen2007}. As such, the first four moments of the distributions will be examined; mean,
 variance, skewness and kurtosis, followed by tests for normality. The second step will follow
-\textcite{Martens2007} in attempting to find the explanatory of each estimator with regards to each other in an
+\citet{Martens2007} in attempting to find the explanatory of each estimator with regards to each other in an
 attempt to find the best estimator without introducing bias. \\
 
 Finally, the performance of the estimators as inputs to forecasting Value-at-Risk; a prevalent measure of
@@ -312,6 +309,6 @@ risk, and the related Expected Shortfall will give an indication as to the abili
 analysts measure and forecast risk. 
 
 \clearpage
-\printbibliography
+\bibliography{bi}
 
 \end{document}
